@@ -18,6 +18,7 @@ with open("tweets.txt") as f:
         tweets.append(line.rstrip())
         
 
+
 # print(tweets[0].split())
 
 
@@ -27,26 +28,27 @@ with open("tweets.txt") as f:
 
 def neg_pos(tweets, negative_words, positive_words):
     splited_tweet = ''
-    my_dic = {"tweet": '', 'positve': 0, "negative": 0}
+    my_dic = {"tweet": '', 'positive': 0, "negative": 0}
     reslut_list = []
 
     for tweet in tweets:
         splited_tweet = tweet.split()
         my_dic['tweet'] = tweet
+        my_dic['positive'] = 0
+        my_dic['negative'] = 0
         
         for i in splited_tweet:
             if i in positive_words:
-                my_dic['positve'] += 1
+                my_dic['positive'] += 1
             elif i in negative_words:
                 my_dic['negative'] += 1
                 
         reslut_list.append(my_dic)
-        my_dic['positve'] = 0
-        my_dic['negative'] = 0
+        
     return reslut_list
     
 
-print(neg_pos(['my name is good'], ['bad', 'awful'], ['good', 'exlennt']))
-        
-        
+print(neg_pos(tweets, negative_words, positive_words))
+
+   
     
