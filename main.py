@@ -18,4 +18,29 @@ with open("tweets.txt") as f:
         tweets.append(line.rstrip())
         
 
+# print(tweets[0].split())
 
+
+# {positve: 1, negative: 0}
+# {postive 0, negative: 12}
+
+
+def neg_pos():
+    splited_tweet = ''
+    my_dic = {'positve': 0, "negative": 0}
+
+    for tweet in tweets:
+        splited_tweet = tweet.split()
+        
+        for i in splited_tweet:
+            if i in positive_words:
+                my_dic['positve'] += 1
+            elif i in negative_words:
+                my_dic['negative'] += 1
+    return my_dic
+    
+
+print(neg_pos())
+        
+        
+    
