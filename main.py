@@ -48,7 +48,8 @@ my_list = []
 for tweet in tweets:
     my_list.append(neg_pos(tweet))
     
-print(my_list)
+sorted_list = sorted(my_list, key=lambda x: x['positive'], reverse=True)    
+print(sorted_list)
     
 
     
